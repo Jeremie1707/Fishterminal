@@ -1,0 +1,2 @@
+class Packer < ApplicationRecord
+end
