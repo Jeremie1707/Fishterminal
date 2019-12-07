@@ -1,2 +1,35 @@
 <h1>Dashboard#index</h1>
 <p>Find me in app/views/dashboard/index.html.erb</p>
+
+<div>
+  <table id="dttb" class="table table-hover">
+      <thead>
+        <tr>
+                <th>Reference</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Departure Time</th>
+                <th>Truck</th>
+                <th>Trailer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @load_ins.each do |loadin| %>
+          <tr>
+            <td><%= loadin.reference %></td>
+            <td><%= loadin.t1_customer.name %></td>
+            <td><%= loadin.status%></td>
+            <td><%= loadin.arrival_date%></td>
+            <td><%= loadin.truck_nr%></td>
+            <td><%= loadin.trailer_nr%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+<!-- <script type="text/javascript">
+  $(document).ready(function() {
+  $("#dttb").dataTable();
+});
+</script> -->
