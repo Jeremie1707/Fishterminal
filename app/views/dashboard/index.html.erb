@@ -2,13 +2,13 @@
 <p>Find me in app/views/dashboard/index.html.erb</p>
 
 <div>
-  <table id="dttb" class="table table-hover">
+  <table id="loadins" class="table table-hover">
       <thead>
         <tr>
                 <th>Reference</th>
                 <th>Customer</th>
                 <th>Status</th>
-                <th>Departure Time</th>
+                <th>Arrival Time</th>
                 <th>Truck</th>
                 <th>Trailer</th>
         </tr>
@@ -27,9 +27,30 @@
       </tbody>
     </table>
 </div>
-
-<!-- <script type="text/javascript">
-  $(document).ready(function() {
-  $("#dttb").dataTable();
-});
-</script> -->
+<div>
+  <table id="loadouts" class="table table-hover">
+      <thead>
+        <tr>
+                <th>Reference</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Departure Time</th>
+                <th>Truck</th>
+                <th>Trailer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @load_outs.each do |loadout| %>
+          <tr>
+            <td><%= loadout.reference %></td>
+            <td><%= loadout.t1_customer.name %></td>
+            <td><%= loadout.status%></td>
+            <td><%= loadout.departure_date%></td>
+            <td><%= loadout.truck_nr%></td>
+            <td><%= loadout.trailer_nr%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+ <%#=javascript_pack_tag 'application'%>

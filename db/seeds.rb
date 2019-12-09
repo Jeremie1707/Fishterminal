@@ -101,15 +101,15 @@ end
 
 puts "---------- creating Loadins ----------"
 counter = 0
-3.times do
+10000.times do
 loadin_attributes = {
   reference: "LI-#{counter + 1 }",
-  t1_customer_id: counter + 2,
+  t1_customer_id: rand(2..5),
   status: status_loadin[rand(0..1)],
   arrival_date: Time.new(2020, 1, 3),
-  truck_nr: truck_nr_in[counter],
-  trailer_nr: trailer_nr_in[counter],
-  type_of_service: type_of_service[counter]
+  truck_nr: truck_nr_in[rand(0..4)],
+  trailer_nr: trailer_nr_in[rand(0..4)],
+  type_of_service: type_of_service[rand(0..2)]
 
   }
 
@@ -201,16 +201,16 @@ end
 puts "---------- creating IN Assignment ----------"
 counter = 0
 
-3.times do
+10000.times do
 in_assignment_attributes = {
   reference: "INA-#{counter + 1 }",
   load_in_id: counter + 1,
-  packer_id: counter + 1,
+  packer_id: rand(1..5),
   lot_nr: "LOT-#{counter + 1 }",
   incoming_order_ref: "INCO-#{counter + 1 }",
   other_ref: "OTHER-#{counter + 1 }",
-  number_of_boxe: number_of_boxe_in[counter],
-  number_of_pallet: number_of_pallet_in[counter]
+  number_of_boxe: number_of_boxe_in[rand(0..2)],
+  number_of_pallet: number_of_pallet_in[rand(0..2)]
    }
 
 
@@ -223,14 +223,14 @@ end
 puts "---------- creating Loadouts ----------"
 counter = 0
 
-3.times do
+10000.times do
 loadout_attributes = {
   reference: "LO-#{counter + 1 }",
-  t1_customer_id: counter + 2,
+  t1_customer_id: rand(2..5),
   status: status_loadout[rand(0..1)],
   departure_date: Time.new(2020, 1, 4),
-  truck_nr: truck_nr_out[counter],
-  trailer_nr: trailer_nr_out[counter]
+  truck_nr: truck_nr_out[rand(0..4)],
+  trailer_nr: trailer_nr_out[rand(0..4)]
 
 }
 
@@ -242,19 +242,19 @@ end
 puts "---------- creating OUT Assignment ----------"
 counter = 0
 
-3.times do
+10000.times do
 out_assignment_attributes = {
   reference: "OUTA-#{counter + 1 }",
   in_assignment_id: counter + 1,
   load_out_id: counter + 1,
-  recipient_id: counter + 1,
+  recipient_id: recipient[rand(0..4)],
   lot_nr: "LOT-#{counter + 1 }",
   other_ref: "OTHER-#{counter + 1 }",
-  number_of_boxe: number_of_boxe_in[counter],
-  number_of_pallet: number_of_pallet_in[counter],
-  net_weight: net_weight[counter],
-  cost: cost[counter],
-  div_cost: div_cost[counter]
+  number_of_boxe: number_of_boxe_in[rand(0..2)],
+  number_of_pallet: number_of_pallet_in[rand(0..2)],
+  net_weight: net_weight[rand(0..2)],
+  cost: cost[rand(0..2)],
+  div_cost: div_cost[rand(0..2)]
 
    }
 
