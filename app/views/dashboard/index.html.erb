@@ -1,56 +1,23 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
 
-<div>
-  <table id="loadins" class="table table-hover">
-      <thead>
-        <tr>
-                <th>Reference</th>
-                <th>Customer</th>
-                <th>Status</th>
-                <th>Arrival Time</th>
-                <th>Truck</th>
-                <th>Trailer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @load_ins.each do |loadin| %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="table-responsive">
+      <div class="jerem">
+        <table class ="table table-striped table-bordered" id="dashboard-datatable" data-source="<%= dashboard_index_path(format: :json) %>">
+        <thead>
           <tr>
-            <td><%= loadin.reference %></td>
-            <td><%= loadin.t1_customer.name %></td>
-            <td><%= loadin.status%></td>
-            <td><%= loadin.arrival_date%></td>
-            <td><%= loadin.truck_nr%></td>
-            <td><%= loadin.trailer_nr%></td>
+            <th>Reference</th>
+            <th>Customer</th>
+            <th>Status</th>
+            <th>Departure Time</th>
+            <th>Truck</th>
+            <th>Trailer</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <table id="loadouts" class="table table-hover">
-      <thead>
-        <tr>
-                <th>Reference</th>
-                <th>Customer</th>
-                <th>Status</th>
-                <th>Departure Time</th>
-                <th>Truck</th>
-                <th>Trailer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @load_outs.each do |loadout| %>
-          <tr>
-            <td><%= loadout.reference %></td>
-            <td><%= loadout.t1_customer.name %></td>
-            <td><%= loadout.status%></td>
-            <td><%= loadout.departure_date%></td>
-            <td><%= loadout.truck_nr%></td>
-            <td><%= loadout.trailer_nr%></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-</div>
- <%#=javascript_pack_tag 'application'%>
